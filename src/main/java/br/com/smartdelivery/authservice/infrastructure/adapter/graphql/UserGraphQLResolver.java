@@ -1,0 +1,30 @@
+package br.com.smartdelivery.authservice.infrastructure.adapter.graphql;
+
+import br.com.smartdelivery.authservice.domain.model.User;
+import br.com.smartdelivery.authservice.domain.port.in.UserUseCase;
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import org.springframework.stereotype.Component;
+
+import java.time.Instant;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.UUID;
+
+@Component
+public class UserGraphQLResolver implements GraphQLQueryResolver, GraphQLMutationResolver {
+    private final UserUseCase userUseCase;
+
+    public UserGraphQLResolver(UserUseCase userUseCase) {
+        this.userUseCase = userUseCase;
+    }
+
+    public User getUserById(UUID id) {
+        return userUseCase.getUserById(id).orElse(null);
+    }
+
+    public User createUser(String username, String email, String password) {
+        User user = new User(null, username, email, password, Date.from(Instant.now()), null, new HashSet<>());
+        return userUseCase.createUser(user);
+    }
+}
