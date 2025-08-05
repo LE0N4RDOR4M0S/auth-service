@@ -5,7 +5,7 @@ CREATE TABLE role (
     name VARCHAR(50) NOT NULL UNIQUE
 );
 
-CREATE TABLE user (
+CREATE TABLE users (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
