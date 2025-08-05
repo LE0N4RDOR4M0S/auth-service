@@ -1,6 +1,6 @@
-package br.com.smartdelivery.authservice.infrastructure.adapter.persistence.mapper;
+package br.com.smartdelivery.authservice.infrastructure.adapter.out.persistence.mapper;
 
-import br.com.smartdelivery.authservice.domain.JpaRoleEntity;
+import br.com.smartdelivery.authservice.infrastructure.adapter.out.persistence.entity.JpaRoleEntity;
 import br.com.smartdelivery.authservice.domain.model.Role;
 
 public class RoleMapper {

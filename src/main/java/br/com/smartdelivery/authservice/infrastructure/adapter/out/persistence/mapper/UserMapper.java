@@ -1,6 +1,6 @@
-package br.com.smartdelivery.authservice.infrastructure.adapter.persistence.mapper;
+package br.com.smartdelivery.authservice.infrastructure.adapter.out.persistence.mapper;
 
-import br.com.smartdelivery.authservice.domain.JpaUserEntity;
+import br.com.smartdelivery.authservice.infrastructure.adapter.out.persistence.entity.JpaUserEntity;
 import br.com.smartdelivery.authservice.domain.model.User;
 
 import java.util.stream.Collectors;

@@ -1,11 +1,10 @@
-package br.com.smartdelivery.authservice.domain;
+package br.com.smartdelivery.authservice.infrastructure.adapter.out.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
