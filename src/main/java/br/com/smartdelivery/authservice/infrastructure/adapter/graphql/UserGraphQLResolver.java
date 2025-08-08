@@ -1,5 +1,7 @@
 package br.com.smartdelivery.authservice.infrastructure.adapter.graphql;
 
+import br.com.smartdelivery.authservice.domain.dto.request.UserRequestDTO;
+import br.com.smartdelivery.authservice.domain.dto.response.UserResponseDTO;
 import br.com.smartdelivery.authservice.domain.model.User;
 import br.com.smartdelivery.authservice.domain.port.in.UserUseCase;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
@@ -19,12 +21,12 @@ public class UserGraphQLResolver implements GraphQLQueryResolver, GraphQLMutatio
         this.userUseCase = userUseCase;
     }
 
-    public User getUserById(UUID id) {
-        return userUseCase.getUserById(id).orElse(null);
+    public UserResponseDTO getUserById(String id) {
+        return userUseCase.getUserById(id);
     }
 
-    public User createUser(String username, String email, String password) {
-        User user = new User(null, username, email, password, Date.from(Instant.now()), null, new HashSet<>());
+    public UserResponseDTO createUser(String username, String email, String password) {
+        UserRequestDTO user = new UserRequestDTO(username, email, password, new HashSet<>());
         return userUseCase.createUser(user);
     }
 }

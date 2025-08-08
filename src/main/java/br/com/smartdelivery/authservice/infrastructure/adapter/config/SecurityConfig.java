@@ -1,4 +1,4 @@
-package br.com.smartdelivery.authservice.config;
+package br.com.smartdelivery.authservice.infrastructure.adapter.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.Customizer;
