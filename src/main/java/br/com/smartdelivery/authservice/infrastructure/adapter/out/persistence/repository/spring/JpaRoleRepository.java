@@ -1,4 +1,4 @@
-package br.com.smartdelivery.authservice.infrastructure.adapter.out.persistence.repository;
+package br.com.smartdelivery.authservice.infrastructure.adapter.out.persistence.repository.spring;
 
 import br.com.smartdelivery.authservice.domain.model.Role;
 import br.com.smartdelivery.authservice.infrastructure.adapter.out.persistence.entity.JpaRoleEntity;
