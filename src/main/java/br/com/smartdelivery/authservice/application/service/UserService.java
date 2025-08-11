@@ -60,4 +60,9 @@ public class UserService implements UserUseCase {
                 .map(UserResponseDTO::toDTO)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public void delete(String id){
+        userRepository.deleteById(UUID.fromString(id));
+    }
 }

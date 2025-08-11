@@ -15,4 +15,5 @@ public interface UserUseCase {
     UserResponseDTO getByEmail(String email);
     UserResponseDTO updateUser(String id, UserRequestDTO user);
     List<UserResponseDTO> getAllUsers();
+    void delete(String id);
 }
