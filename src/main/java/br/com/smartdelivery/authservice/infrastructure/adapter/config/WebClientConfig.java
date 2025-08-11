@@ -10,7 +10,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @RequiredArgsConstructor
 public class WebClientConfig {
 
-    @Value("${keycloak.server.url}")
+    @Value("${keycloak.auth-server-url}")
     private String keycloakServerUrl;
 
     @Value("${keycloak.realm}")
@@ -19,7 +19,7 @@ public class WebClientConfig {
     @Value("${keycloak.client.id}")
     private String clientId;
 
-    @Value("${keycloak.client.secret:}")
+    @Value("${keycloak.client.secret}")
     private String clientSecret;
 
     @Value("${keycloak.admin.username}")

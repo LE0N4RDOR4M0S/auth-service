@@ -10,10 +10,33 @@ type User {
     roles: [Role!]!
 }
 
+input UserInput {
+    username: String!
+    email: String!
+    password: String!
+    roles: [ID!]
+}
+
+input RoleInput {
+    name: String!
+}
+
 type Query {
+    users: [User!]!
     getUserById(id: ID!): User
+    getByUsername(username: String!): User
+    getByEmail(email: String!): User
+    getAllRoles: [Role!]!
+    getRoleById(id: ID!): Role
+    getRoleByName(name: String!): Role
+    roleExists(name: String!): Boolean
 }
 
 type Mutation {
-    createUser(username: String!, email: String!, password: String!): User
+    createUser(input: UserInput!): User
+    updateUser(id: ID!, input: UserInput!): User
+    deleteUser(id: ID!): Boolean
+    createRole(role: RoleInput!): Role
+    updateRole(id: ID!, role: RoleInput!): Role
+    deleteRole(id: ID!): Boolean
 }

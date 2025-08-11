@@ -12,6 +12,5 @@ public interface RoleUseCase {
     RoleResponseDTO updateRole(String id, RoleRequestDTO role);
     void deleteRole(String id);
     boolean roleExists(String name);
-
     List<RoleResponseDTO> getAll();
 }
